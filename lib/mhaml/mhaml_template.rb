@@ -13,6 +13,7 @@ module MHaml
     attr_reader :namespace
 
     def evaluate(scope, locals, &block)
+      puts "aaaaaaaaaaaaaaaaaaa"
       template_key = path_to_key scope
       <<-MustacheTemplate
         (function() {
