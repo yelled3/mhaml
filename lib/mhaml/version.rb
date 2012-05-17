@@ -1,3 +1,3 @@
 module MHaml
-  VERSION = '0.8'
+  VERSION = '0.9.1'
 end
