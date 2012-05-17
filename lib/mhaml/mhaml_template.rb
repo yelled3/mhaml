@@ -18,7 +18,7 @@ module MHaml
 
     def evaluate(scope, locals, &block)
       template_key = path_to_key scope
-      code = Haml::Engine.new(data, Haml::Template.options.merge(:escape_attrs => false)).render(scope, locals).html_safe
+      code = Haml::Engine.new(data, Haml::Template.options.merge(:escape_attrs => false)).render(scope, locals).to_json
       <<-MustacheTemplate
         (function() {
           #{namespace} || (#{namespace} = {});
