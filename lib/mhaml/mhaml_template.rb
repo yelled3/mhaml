@@ -18,7 +18,7 @@ module MHaml
 
     def evaluate(scope, locals, &block)
       template_key = path_to_key scope
-      code = Haml::Engine.new(data, Haml::Template.options.merge(:escape_attrs => false)).render(scope, locals)
+      code = Haml::Engine.new(data, Haml::Template.options.merge(:escape_attrs => false)).render(scope, locals).html_safe
       <<-MustacheTemplate
         (function() {
           #{namespace} || (#{namespace} = {});
@@ -26,7 +26,7 @@ module MHaml
             if (partials == null) {
               partials = {};
             }
-            var template = #{code};
+            var template = "#{code}";
             if (object == null){
               return template;
             } else {
