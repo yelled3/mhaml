@@ -17,15 +17,15 @@ module MHaml
     end
 
     def template_base_path
-      @template_base_path ||= Rails.root.join("app", "templates")
+      @template_base_path ||= Rails.root.join("app", "views")
     end
 
     def template_extension
-      @template_extension ||= 'mustache'
+      @template_extension ||= 'mhaml'
     end
 
     def action_view_key
-      @action_view_key ||= 'mustache'
+      @action_view_key ||= 'mhaml'
     end
 
     def template_namespace
