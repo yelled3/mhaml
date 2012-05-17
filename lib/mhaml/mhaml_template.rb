@@ -26,7 +26,7 @@ module MHaml
             if (partials == null) {
               partials = {};
             }
-            var template = "#{code}";
+            var template = #{code};
             if (object == null){
               return template;
             } else {
