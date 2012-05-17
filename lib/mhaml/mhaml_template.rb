@@ -1,6 +1,6 @@
 require 'tilt'
 
-module SmtRails
+module MHaml
   class MHamlTemplate < Tilt::Template
     def self.default_mime_type
       'application/javascript'
