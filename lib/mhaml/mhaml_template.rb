@@ -1,5 +1,5 @@
 require 'tilt'
-
+require 'haml'
 module MHaml
   class MHamlTemplate < Tilt::Template
     def self.default_mime_type
@@ -18,6 +18,7 @@ module MHaml
 
     def evaluate(scope, locals, &block)
       template_key = path_to_key scope
+      code = Haml::Engine.new(data, Haml::Template.options.merge(:escape_attrs => false)).render(scope, locals)
       <<-MustacheTemplate
         (function() {
           #{namespace} || (#{namespace} = {});
@@ -25,7 +26,7 @@ module MHaml
             if (partials == null) {
               partials = {};
             }
-            var template = #{::Haml::Engine.new(data.inspect).render};
+            var template = #{code};
             if (object == null){
               return template;
             } else {

@@ -13,6 +13,7 @@ Gem::Specification.new do |gem|
 
   gem.add_runtime_dependency "rails", ">= 3.1.0"
   gem.add_runtime_dependency "tilt", ">= 1.3.3"
+  gem.add_runtime_dependency "haml", ">= 3.1.0"
   gem.add_runtime_dependency "sprockets", ">= 2.0.3"
   gem.add_runtime_dependency "mustache", ">= 0.99.4"
 
