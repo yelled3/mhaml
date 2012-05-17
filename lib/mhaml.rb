@@ -15,4 +15,4 @@ module MHaml
 end
 
 # init action view handler
-require "mhaml/mustache"
+require "mhaml/railtie"
