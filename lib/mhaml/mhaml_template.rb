@@ -2,18 +2,11 @@ require 'tilt'
 
 module MHaml
   class MHamlTemplate < Tilt::Template
-    def self.default_mime_type
-      'application/javascript'
-    end
-
-    def prepare
-      @namespace = "window.#{MHaml.template_namespace}"
-    end
-
+    self.default_mime_type = 'application/javascript'
+    self.namespace = "window.#{MHaml.template_namespace}"
     attr_reader :namespace
 
     def evaluate(scope, locals, &block)
-      puts "aaaaaaaaaaaaaaaaaaa"
       template_key = path_to_key scope
       <<-MustacheTemplate
         (function() {
