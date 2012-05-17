@@ -25,7 +25,7 @@ module MHaml
             if (partials == null) {
               partials = {};
             }
-            var template = #{data.inspect};
+            var template = #{::Haml::Engine.new(data.inspect)};
             if (object == null){
               return template;
             } else {
