@@ -1,12 +1,12 @@
 module MHaml
   # Change config options in an initializer:
   #
-  # MHaml.template_extension = 'mustache'
+  # MHaml.template_extension = 'mhaml'
   #
   # Or in a block:
   #
   # MHaml.configure do |config|
-  #   config.template_extension = 'mustache'
+  #   config.template_extension = 'mhaml'
   # end
 
   module Config
@@ -29,7 +29,7 @@ module MHaml
     end
 
     def template_namespace
-      @template_namespace ||= 'MHML'
+      @template_namespace ||= 'mhaml'
     end
   end
 end
